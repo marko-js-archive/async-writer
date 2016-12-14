@@ -3,6 +3,7 @@
 var EventEmitter = require('events').EventEmitter;
 var StringWriter = require('./StringWriter');
 var BufferedWriter = require('./BufferedWriter');
+var complain = require('complain');
 
 var voidWriter = { write:function(){} };
 
@@ -393,30 +394,34 @@ var proto = AsyncStream.prototype = {
         return this;
     },
 
-    // Deprecated BEGIN:
-    getAttributes: function() {
-        return this.global;
-    },
-    getAttribute: function(name) {
-        return this.global[name];
-    },
-
     createOut: function() {
         return new AsyncStream(this.global);
     },
 
+    // Deprecated BEGIN:
+    getAttributes: function() {
+        complain('getAttributes() is deprecated, use access the `global` property instead.');
+        return this.global;
+    },
+    getAttribute: function(name) {
+        complain('getAttributes() is deprecated, use access the `global` property instead.');
+        return this.global[name];
+    },
+
     captureString: function(func, thisObj) {
+        complain('captureString() is deprecated.');
         var sb = new StringWriter();
         this.swapWriter(sb, func, thisObj);
         return sb.toString();
     },
     swapWriter: function(newWriter, func, thisObj) {
+        complain('swapWriter() is deprecated.');
         var currentWriter = this.writer;
         this.writer = newWriter;
         func.call(thisObj);
         this.writer = currentWriter;
     }
-    // // Deprecated END
+    // Deprecated END
 };
 
 // alias:

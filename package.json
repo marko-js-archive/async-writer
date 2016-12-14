@@ -17,6 +17,7 @@
     "Michael Rawlings <ml.rawlings@gmail.com>"
   ],
   "dependencies": {
+    "complain": "^1.0.0",
     "events": "^1.0.2"
   },
   "devDependencies": {
