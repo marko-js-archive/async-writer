@@ -22,7 +22,7 @@
     "marko-html-util": "^1.0.0"
   },
   "devDependencies": {
-    "chai": "~3.5.0",
+    "chai": "~4.0.2",
     "jshint": "^2.9.3",
     "mocha": "~3.2.0",
     "through": "^2.3.4",
