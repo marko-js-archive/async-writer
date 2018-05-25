@@ -17,7 +17,7 @@
     "Michael Rawlings <ml.rawlings@gmail.com>"
   ],
   "dependencies": {
-    "events": "^1.0.2",
+    "events": "^3.0.0",
     "marko-dom": "^1.0.0",
     "marko-html-util": "^1.0.0"
   },
